@@ -9,7 +9,14 @@
       "Bash(cp -r /tmp/debbie-portfolio/. /c/Users/crit/OneDrive/Desktop/debbie-portfolio/)",
       "Read(//c/Users/crit/OneDrive/Desktop/debbie-portfolio//**)",
       "Bash(npm install:*)",
-      "Bash(npx shadcn@latest init --defaults --yes)"
+      "Bash(npx shadcn@latest init --defaults --yes)",
+      "Bash(npx shadcn@latest add badge card separator)",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(TURBOPACK=0 npx next build)",
+      "Bash(gh auth:*)",
+      "Skill(commit-commands:commit-push-pr)",
+      "Skill(commit-commands:commit-push-pr:*)"
     ]
   }
 }
