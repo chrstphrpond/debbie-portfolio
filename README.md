@@ -16,7 +16,7 @@ Production campaign website and email-delivery system for Debbie Maquidato's 202
 
 The project began as a mobile-first campaign page designed for QR traffic at nursing conferences. It grew into a campaign platform that combines the public site, supporter capture, transactional welcome emails, four branded campaign templates, bulk-delivery scripts, unsubscribe handling, analytics, and production monitoring.
 
-The email program delivered **five campaign sends to 5,465 recipients**. Christopher Pond Maquidato built and maintained the product design, frontend, email system, deployment, and observability.
+The program sent four campaign emails in April 2026. The two scripted sends went to 5,465 (16 April) and 5,463 (24 April) contacts, counted as accepted by Resend's batch API; delivered counts were not reconciled. Christopher Pond Maquidato built and maintained the product design, frontend, email system, deployment, and observability.
 
 ## What shipped
 
@@ -26,7 +26,7 @@ The email program delivered **five campaign sends to 5,465 recipients**. Christo
 - Personalized React Email welcome and campaign templates
 - Paginated audience retrieval and batch delivery in groups of up to 100
 - Dry-run, preview-recipient, and send-limit controls for campaign scripts
-- One-click web unsubscribe flow plus email unsubscribe headers
+- Web unsubscribe page (one button) plus `List-Unsubscribe` headers that point to it
 - UTM-tagged campaign links and scroll-depth analytics at 25%, 50%, 75%, and 100%
 - Sentry error reporting, tracing, and replay sampling with default PII collection disabled
 - Production deployment on Vercel with campaign assets stored in Vercel Blob
@@ -60,7 +60,7 @@ The main page uses Next.js App Router and React Server Components for compositio
 
 ### Email delivery with operational controls
 
-Campaign messages are written as typed React Email components. Delivery scripts retrieve contacts with cursor pagination, remove unsubscribed records, render personalized HTML, split recipients into batches of 100, throttle requests, and report sent and failed counts. Preview and dry-run options allow content and recipient checks before a live send.
+Campaign messages are written as typed React Email components. Delivery scripts retrieve contacts with cursor pagination, remove unsubscribed records, render personalized HTML, split recipients into batches of 100, throttle requests, and report sent and failed counts (as accepted by the API: a batch the API rejects is currently counted as sent). Preview and dry-run options allow content and recipient checks before a live send.
 
 ### Subscription and consent handling
 
